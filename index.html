@@ -29,7 +29,7 @@
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-areas: "logo account";
-      padding: 0.5rem 2rem;
+      padding: 1rem 2rem;
       align-items: center;
       background: #fff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -72,25 +72,33 @@
     .account-container a {
       text-decoration: none;
       color: #333;
-      margin: 0 0.25rem;
+      margin: 0 0.05rem;
     }
+
 
     .account-container a.my-account {
       display: flex;
       align-items: center;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 16px;
       color: inherit;
-      text-decoration: none;
+    }
+
+    .account-container a.logout {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 16px;
+      color: inherit;
     }
 
     .my-account::before {
       content: "";
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: 40px;
+      height: 40px;
       margin-right: 8px;
-      background-image: url('https://example.com/your-profile-image.png'); /* Replace this URL */
+      background-image: url('./download.jpg'); /* Replace this URL */
       background-size: cover;
       background-position: center;
       border-radius: 50%;
@@ -101,16 +109,20 @@
       color: #999;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+    h1, .h1 {
+        font-weight: 900;
+        font-size: 2.33rem;
+        line-height: 1.1;
+        margin: 2rem 0 1.125rem;
+        color: #000;
     }
 
-    h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
+    h2, .h2 {
+        font-weight: 900;
+        font-size: 2rem;
+        line-height: 1.1;
+        margin: 0 0 .75rem;
+        color: #000;
     }
 
     .card-standalone {
@@ -125,7 +137,7 @@
       display: inline-block;
       background-color: #2d5fff;
       color: #fff;
-      font-weight: 600;
+      font-weight: 300;
       font-size: 1.125rem;
       padding: 0.75rem 1.5rem;
       border: none;
@@ -154,9 +166,42 @@
     }
 
     .int-nav {
-      color: var(--color-link);
-      text-decoration: underline;
+        display: block;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1em 0 0;
+        position: relative;
     }
+
+    .site-footer {
+        font-size: 1.125rem;
+        padding: 2rem 1rem 0;
+    }
+
+    ul.list-inline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem; /* space between links */
+        justify-content: center; /* center horizontally */
+    }
+
+    ul.list-inline li {
+        display: inline; /* make sure each li is inline */
+    }
+
+    .footer-links a {
+        text-decoration: underline;
+        color: #0000EE; /* default link blue or adjust as needed */
+    }
+
+    .site-footer .copyright {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
   </style>
 
 </head>
@@ -164,27 +209,46 @@
 <body>
   <header role="banner" class="app-masthead">
     <a id="logo-link" href="https://www.cfainstitute.org" class="site-logo">
-      <img id="logo-main" src="https://uxpatterns.cfainstitute.org/Content/img/2x/logos/cfa-logo-pride.png?v=R-xDy1u_mf3gKCwZiHIzzQaw1ytPMhRjdGIDpyRlXs8" alt="CFA Institute Logo" />
+      <img id="logo-main" src="https://uxpatterns.cfainstitute.org/Content/img/2x/logos/cfa-logo.svg?v=DEg3-usvXE1gjaAscvp5HRGcpWQQBc4HWV8JIMmfZAE" alt="CFA Institute Logo" />
       <img id="logo-mobile" src="https://uxpatterns.cfainstitute.org/Content/img/2x/logos/cfa-logo-wheel-pride.png" alt="CFA Institute Logo" />
     </a>
     <div class="account-container logged-in">
-      <a href="https://www.cfainstitute.org/account" class="my-account">Account</a>
+      <a href="https://www.cfainstitute.org" class="my-account">Account</a>
       <span class="pipe">|</span>
-      <a href="/account/logout" class="log-link">Log Out</a>
+      <a href="https://www.cfainstitute.org/account" class="logout">Log Out</a>
     </div>
   </header>
 
   <div id="contentarea">
     <h1>CFA<sup>®</sup> Program Exam Results</h1>
-    <p><strong>Amy Yingshan Zhang</strong></p>
+    <p>Amy Yingshan Zhang</p>
     <p><strong>CFA Institute ID:</strong> 200236856</p>
 
+    <div class="card-standalone">
+      <h2>2024 August Level I CFA Exam</h2>
+      <p><strong>Result:</strong> Passed</p>
+
+      <a class="button-blue" href="view-pdf.html" target="_blank">View Result Details (PDF)</a>
+
+      <p>We are delighted to inform you that you passed your CFA Program exam. View your results to gain insight into your performance, including:</p>
+      <ul>
+        <li>How your score compares to the minimum passing score (MPS) and other candidates' scores</li>
+        <li>How well your performance on exam day (as measured by your score/subscores) represents your knowledge in each topic area</li>
+      </ul>
+
+      <p><a id="interpret-results" class="int-nav" href="https://www.cfainstitute.org/en/programs/cfa/exam/understanding-your-result">Learn how to interpret your detailed results</a></p>
+    </div>
+  </div>
+
+
+
+
+  <div id="contentarea">
     <div class="card-standalone">
       <h2>2025 May Level II CFA Exam</h2>
       <p><strong>Result:</strong> Passed</p>
 
-      <a class="button-blue" href="results.pdf" target="_blank" rel="noopener noreferrer">View Result Details (PDF)</a>
-
+      <a class="button-blue" href="view-pdf2.html" target="_blank">View Result Details (PDF)</a>
 
       <p>We are delighted to inform you that you passed your CFA Program exam. View your results to gain insight into your performance, including:</p>
       <ul>
@@ -196,5 +260,19 @@
     </div>
   </div>
 </body>
+
+<div class="site-footer clearfix" style="margin-bottom: 0px;">
+    <div class="col-xs-12 col-md-8">
+        <ul class="list-inline footer-links">
+            <li><a href="https://profile.cfainstitute.org/ContactUs">Contact Us</a></li>
+            <li><a href="https://www.cfainstitute.org/en/about/governance/policies/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://www.cfainstitute.org/en/about/governance/policies/privacy-policy">Cookies Policy</a></li>
+            <li><a href="https://www.cfainstitute.org/en/about/governance/policies/terms-conditions">Terms &amp; Conditions</a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        © 2025 CFA Institute. All Rights Reserved.
+    </div>
+</div>
 
 </html>
